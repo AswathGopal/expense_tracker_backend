@@ -9,7 +9,7 @@ const  IncomeRouter = require('./Routes/Income.js')
 const  ExpenseRouter= require('./Routes/Expense.js')
 const port= process.env.PORT;
 app.use(express.json());
-app.use(cors({origin:['http://localhost:3000'],
+app.use(cors({origin:[process.env.URL],
 methods:['GET','POST','PUT','DELETE'],
 credentials: true}))
 
