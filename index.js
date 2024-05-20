@@ -8,8 +8,9 @@ const  SignInRouter= require('./Routes/SignIn.js')
 const  IncomeRouter = require('./Routes/Income.js') 
 const  ExpenseRouter= require('./Routes/Expense.js')
 const port= process.env.PORT;
+const allowedOrigins = process.env.URL ? [process.env.URL] : [];
 app.use(express.json());
-app.use(cors({origin:[process.env.URL],
+app.use(cors({origin:allowedOrigins,
 methods:['GET','POST','PUT','DELETE'],
 credentials: true}))
 
