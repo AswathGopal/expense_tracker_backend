@@ -25,7 +25,7 @@ app.post('/verify', (req, res)=> {
     console.log(token)
     if(token) {
         jwt.verify(token,process.env.JWT_SECRET_KEY , (err) => {
-            if(err) return res.json({Status: false, Error: "Wrong Token"})
+            if(err) return res.json({Status: "not ok", Error: "Wrong Token"})
             else return res.json({Status:"ok"})
         })
     } else {

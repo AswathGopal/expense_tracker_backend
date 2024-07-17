@@ -35,9 +35,10 @@ router.post('/login', (req, res) => {
 });
 
 
-router.get('/logout',(req,res)=>{
+router.post('/logout',(req,res)=>{
+    const token = req.body.token;
     res.clearCookie('token')
-    return res.json({Status:true})
+    return res.json({Status:"ok"})
 })
 
 module.exports=router;
